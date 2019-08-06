@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SupportMe</title>
-
     <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
     <link rel="stylesheet" href="style.css" />
@@ -37,20 +36,20 @@
                 <input type="button" name="close" value="X" id="close">
                 <a class="fb-button" href="#">Iniciar sesión con facebook</a>
                 <a class="google-button" href="#">Iniciar sesión con google</a>
-                <div>
-                    <div class="line">&nbsp;</div>
-                    <div class="leyend"> O </div>
-                    <div class="line">&nbsp;</div>
-                </div>
-                <input type="text" name="name" id="name-login" placeholder="Correo">
+
+                <input type="text" name="email" id="email-login" placeholder="Correo">
                 <input type="password" name="pass" id="pass-login" placeholder="Contraseña">
                 <a class="enter-button" href="#">Iniciar</a>
             </div>
         </div>
     </section>
 
-    <section title="Window-Register" class="section-register" id="section-register">
+
+
+    <section title="Window-Register" class="section-register hide" id="section-register">
         <div>
+            <input type="button" name="close" value="X" id="close-r">
+
             <h1>Registro</h1>
             <input type="text" placeholder="Nombre" id="register-name" class="register-name">
             <input type="email" placeholder="e-mail" id="register-email" class="register-email">
@@ -106,8 +105,9 @@
 
 
 
-
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="firebase.js"></script>
     <!-- <script type="text/javascript" src="main.js"></script> -->
 
 

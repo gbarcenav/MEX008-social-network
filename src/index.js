@@ -2,6 +2,7 @@
 const loginButton = document.getElementById('login-button');
 const registerButton = document.getElementById('register-button');
 const closeButton = document.getElementById('close');
+const closerButton = document.getElementById('close-r');
 
 
 //function open or close sections
@@ -25,14 +26,26 @@ loginButton.addEventListener("click", goinglogin);
 const goingregister = () => {
     hideSection('welcomepage');
     hideSection('login');
-    showSection('register');
+    showSection('section-register');
 }
 
 registerButton.addEventListener("click", goingregister);
 
 const closelogin = () => {
     hideSection('login');
+    hideSection('section-register');
     showSection('welcomepage');
+
 }
 
 closeButton.addEventListener("click", closelogin);
+
+const closeregister = () => {
+    hideSection('section-register');
+    hideSection('login');
+    showSection('welcomepage');
+}
+closerButton.addEventListener("click", closeregister);
+
+const useremail = document.getElementById("email-login").value;
+const userpass = document.getElementById("pass-login").value;

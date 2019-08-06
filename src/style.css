@@ -151,7 +151,8 @@ figure {
     color: #4c4b62;
 }
 
-#close {
+#close,
+#close-r {
     background-color: transparent;
     float: right;
     border: none;
@@ -160,8 +161,8 @@ figure {
     margin-top: 10px;
 }
 
-#close:hover {
-    background-color: #4c4b62;
+#close:hover,
+#close-r:hover {
     transform: scale(1.5);
     font-size: 12px;
     border-radius: 20px;
@@ -189,8 +190,10 @@ figure {
     }
 }
 
+
 /* Sección de registro */
-.section-register{
+
+.section-register {
     box-sizing: border-box;
     display: flex;
     padding: 10px;
@@ -202,10 +205,10 @@ figure {
     height: 100vh;
 }
 
-[class^="register-"]{
+[class^="register-"] {
     box-sizing: border-box;
     display: flex;
-    border: solid #4C4B62 2px;
+    border: 2px solid #f7dca8;
     width: 300px;
     height: 50px;
     margin: 15px;
@@ -215,13 +218,13 @@ figure {
     font-family: 'Cabin', sans-serif;
 }
 
-.section-register h1{
+.section-register h1 {
     text-align: center;
     color: #4C4B62;
     font-size: 2rem;
 }
 
-.button-register{
+.button-register {
     box-sizing: border-box;
     display: flex;
     padding: 3px;
@@ -232,5 +235,5 @@ figure {
     background: #4C4B62;
     border: none;
     border-radius: 35px;
-    justify-content: center;   
+    justify-content: center;
 }
