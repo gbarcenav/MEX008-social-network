@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body onload="clean()">
 
  <section class="welcome-page" id="welcomepage">
         <div class="welcome-body">
@@ -26,7 +26,7 @@
                     hogar.
                 </p>
             </div>
-            <a id="login-button" class="login-button" href="#login">Iniciar sesión</a>
+            <input type="button" class="login-button" id="login-sesion" value="Iniciar Sesión">
             <a id="register-button" class="register-button" href="#register">Registrarse</a>
     </section>
 
@@ -37,7 +37,8 @@
             <div class="info-user">
                 <input type="button" name="close" value="X" id="close">
                 <a class="fb-button" href="#">Iniciar sesión con facebook</a>
-                <a class="google-button" href="#">Iniciar sesión con google</a>
+                <input type="button" id="btn-gmail" class= "google-button" value="Iniciar sesión con Google">
+                <!-- <a class="google-button" href="#" id="btn-gmail">Iniciar sesión con google</a> -->
                 <div>
                     <div class="line">&nbsp;</div>
                     <div class="leyend"> O </div>
@@ -45,7 +46,8 @@
                 </div>
                 <input type="text" name="name" id="name-login" placeholder="Correo">
                 <input type="password" name="pass" id="pass-login" placeholder="Contraseña">
-                <a class="enter-button" href="#">Iniciar</a>
+                <input type="button" id="login-count" class="enter-button" value="Iniciar">
+                <!-- <a class="enter-button" href="#">Iniciar</a> -->
             </div>
         </div>
     </section>
@@ -54,9 +56,9 @@
         <div>
             <h1>Registro</h1>
             <input type="text" placeholder="Nombre" id="register-name" class="register-name">
-            <input type="email" placeholder="e-mail" id="register-email" class="register-email">
+            <input type="email" placeholder="Ingresa tu e-mail" id="register-email" class="register-email">
             <input type="text" placeholder="Username" id="register-username" class="register-username">
-            <input type="password" placeholder="Contraseña" id="register-password" class="register-password">
+            <input type="password" placeholder="Ingresa tu contraseña" id="register-password" class="register-password">
             <input type="password" placeholder="Confirmar Contraseña" id="register-cp" class="register-cp">
 
             <select name="Estado" size="1" class="register-select" id="register-select">
@@ -100,24 +102,36 @@
 
             <input type="button" value="RegistrarMe" id="button-register" class="button-register">
         </div>
+    </section>
 
+    <section id="section-muro" class="section-muro">
+        <div id="muestra">
+           
+        </div>
     </section>
 
 
 
-<!-- pruebas con el firebas -->
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+
+    
+<!-- pruebas con el firebas -->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
 
 <!-- Archivo .js del firebase -->
-<script type="text/javascript" src="firebase.js"></script>
+    <script type="text/javascript" src="firebase.js"></script>
 
-
-
+    <!-- <script type="text/javascript" src="app.js"></script> -->
     <script type="text/javascript" src="index.js"></script>
     <!-- <script type="text/javascript" src="main.js"></script> -->
-
 
 </body>
 

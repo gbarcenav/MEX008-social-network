@@ -1,5 +1,5 @@
 // aqui exportaras las funciones que necesites
-const loginButton = document.getElementById('login-button');
+const loginButton = document.getElementById('login-sesion');
 const registerButton = document.getElementById('register-button');
 const closeButton = document.getElementById('close');
 
@@ -36,3 +36,13 @@ const closelogin = () => {
 }
 
 closeButton.addEventListener("click", closelogin);
+
+//probando limpiar pagina
+
+const clean = () =>{
+   document.getElementById('register-name').value = "";
+   document.getElementById('register-email').value = "";
+   document.getElementById('register-username').value = "";
+   document.getElementById('register-password').value = "";
+   document.getElementById('register-cp').value = "";
+}
