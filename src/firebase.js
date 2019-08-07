@@ -21,6 +21,9 @@
    
      //Usamos la función de firebase para crear un usuario con contraseña
      firebase.auth().createUserWithEmailAndPassword(eMail, password)
+     .then(function(){
+       sendEmailVerification();
+     })
      .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -52,14 +55,21 @@ const loginS = () =>{
 }
 loginSession.addEventListener("click", loginS);
 
+
+//Verifica siempre la pagina Web
 const observador = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           console.log("Usuario activo")
-          showMuro();
+          showMuro(user);
           // User is signed in.
           var displayName = user.displayName;
           var email = user.email;
+
+          console.log("------------------");
+          console.log(user.emailVerified);
+          console.log("------------------");
+
           var emailVerified = user.emailVerified;
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
@@ -76,11 +86,17 @@ const observador = () =>{
   
   observador();
 
-  let showMuro = () =>{
+  let showMuro = (userA) =>{
+    let user = userA;
     const muro = document.getElementById("muestra");
-    muro.innerHTML=`
-    <p>¡Bienvenido!</p>
-    <button onclick="closeSesion()" class="button-register" id= "button-register">Cerrar Sesión</button>`;
+
+    //Si el usuario tiene el correo verificado le muestra la siguiente sección
+    if(user.emailVerified){
+      muro.innerHTML=`
+      <p>¡Bienvenido!</p>
+      <button onclick="closeSesion()" class="button-register" id= "button-register">Cerrar Sesión</button>`;
+    }
+    
   }
 
   const closeSesion = () =>{
@@ -127,3 +143,17 @@ const observador = () =>{
   }
 
   btnGmail.addEventListener("click", registerGmail);
+
+  const sendEmailVerification = () => {
+      // [START sendemailverification]
+      const user = firebase.auth().currentUser;
+      user.sendEmailVerification().then(function() {
+        // Email Verification sent!
+        // [START_EXCLUDE]
+        alert('Enviando correo');
+        // [END_EXCLUDE]
+        // [END sendemailverification]
+      }).catch(function(error){
+     console.log(error);
+      });     
+  }
