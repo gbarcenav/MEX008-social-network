@@ -1,6 +1,6 @@
-let Registry = {
+let Signin = {
   render: async () => {
-    return /*html*/ `
+    let view = /*html*/ `
         <section title="Window-Register" class="section-register" id="section-register">
         <div>
             <h1>Registro</h1>
@@ -54,6 +54,7 @@ let Registry = {
 
     </section>
         `;
+    return view;
   },
   // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
   // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
@@ -77,4 +78,4 @@ let Registry = {
   }
 };
 
-export default Registry;
+export default Signin;

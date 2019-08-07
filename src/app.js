@@ -3,25 +3,28 @@
 
 // SE IMPORTAN LAS RUTAS Y EL JS "UTILS"
 // Páginas o main
-import Home from "./vistas/paginas/home.js";
-import Registry from "./vistas/paginas/registro.js";
-import Profile from "./vistas/paginas/perfil.js";
-import Timeline from "./vistas/paginas/timeline.js";
+import Home from "./views/pages/home.js";
+import Login from "./views/pages/login.js";
+import Signin from "./views/pages/sign_in.js";
+// import Profile from "./vistas/paginas/profile.js";
+// import Timeline from "./vistas/paginas/timeline.js";
+import Error404 from "./views/pages/error404.js";
 
 //Componentes o navbar y footer
-import Navbar from "./vistas/componentes/navbar.js";
-import Footer from "./vistas/componentes/footer.js";
+import Navbar from "./views/components/navbar.js";
+import Footer from "./views/components/footer.js";
 
 // Archivo "utils"
-import Utils from "./servicios/utils.js";
+import Utils from "./services/utils.js";
 
 // SE ENLISTAN LAS RUTAS ADMITIDAS.
 // Cualquier URL distinta de estas rutas arrojará un error 404
 const routes = {
   "/": Home,
-  "/registro": Registry,
-  "/perfil": Profile,
-  "/timeline": Timeline
+  "/login": Login,
+  "/register": Signin
+  // "/profile": Profile,
+  // "/timeline": Timeline
 };
 
 // El código del enrutador.
@@ -47,7 +50,7 @@ const router = async () => {
     (request.resource ? "/" + request.resource : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? "/" + request.verb : "");
-
+  console.log("PARSED", parsedURL);
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();

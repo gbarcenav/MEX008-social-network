@@ -36,8 +36,8 @@ let Home = {
                    hogar.
                </p>
            </div>
-           <a id="login-button" class="login-button" href="#login">Iniciar sesión</a>
-           <a id="register-button" class="register-button" href="#register">Registrarse</a>
+           <a id="login-button" class="login-button" href="#/login">Iniciar sesión</a>
+           <a id="register-button" class="register-button" href="#/register">Registrarse</a>
    </section>
        `;
     return view;
