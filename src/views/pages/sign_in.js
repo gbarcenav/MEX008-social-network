@@ -22,7 +22,7 @@ let Signin = {
                <option value="coah">Coahuila</option>
                <option value="col">Colima</option>
                <option value="dgo">Durango</option>
-               <option value="gto">Guanajautao</option>
+               <option value="gto">Guanajauto</option>
                <option value="gro">Guerrero</option>
                <option value="hgo">Hidalgo</option>
                <option value="jal">Jalisco</option>
@@ -53,29 +53,31 @@ let Signin = {
         </div>
 
     </section>
+
         `;
     return view;
   },
   // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
   // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
-  after_render: async () => {
-    document.getElementById("button-register").addEventListener("click", () => {
-      let email = document.getElementById("register-email");
-      let pass = document.getElementById("register-password");
-      let repeatPass = document.getElementById("register-cp");
-      if (pass.value != repeatPass.value) {
-        alert(`The passwords dont match`);
-      } else if (
-        (email.value == "") |
-        (pass.value == "") |
-        (repeatPass == "")
-      ) {
-        alert(`The fields cannot be empty`);
-      } else {
-        alert(`User with email ${email.value} was successfully submitted!`);
-      }
-    });
-  }
+  
+  // after_render: async () => {
+  //   document.getElementById("button-register").addEventListener("click", () => {
+  //     let email = document.getElementById("register-email");
+  //     let pass = document.getElementById("register-password");
+  //     let repeatPass = document.getElementById("register-cp");
+  //     if (pass.value != repeatPass.value) {
+  //       alert(`The passwords dont match`);
+  //     } else if (
+  //       (email.value == "") |
+  //       (pass.value == "") |
+  //       (repeatPass == "")
+  //     ) {
+  //       alert(`The fields cannot be empty`);
+  //     } else {
+  //       alert(`User with email ${email.value} was successfully submitted!`);
+  //     }
+  //   });
+  // }
 };
 
 export default Signin;
