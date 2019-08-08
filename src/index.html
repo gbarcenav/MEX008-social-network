@@ -2,227 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>SupportMe</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-    <section class="welcome-page" id="welcomepage">
-        <div class="welcome-body">
-            <div class="logo">
-                <figure>
-                    <img src="img/logo-02.png" alt="logo">
-                </figure>
-            </div>
-            <div class="description">
-                <p>SupportMe te ayudará a mantener el contacto con antiguas amigas, vecinas y/o conocidas. Además con esta aplicación te podrás mantener informada acerca del nuevo lugar donde viviras haciendo más fácil el proceso de adaptación a tu nuevo
-                    hogar.
-                </p>
-            </div>
-            <a id="login-button" class="login-button" href="#login">Iniciar sesión</a>
-            <a id="register-button" class="register-button" href="#register">Registrarse</a>
-    </section>
-
-
-    <section class="login hide" id="login">
-        <div class="login-body">
-
-            <div class="info-user">
-                <input type="button" name="close" value="X" id="close">
-                <a class="fb-button" href="#">Iniciar sesión con facebook</a>
-                <a class="google-button" href="#">Iniciar sesión con google</a>
-
-                <input type="text" name="email" id="email-login" placeholder="Correo">
-                <form class="form-inline">
-                    <div class="form-group">
-
-                        <input type="password" id="pass-login" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" placeholder="Contraseña">
-                        <small id="passwordHelpInline" class="text-muted">
-                       <p aling="cemter">Must be 8-20 characters long.</p> 
-                      </small>
-                    </div>
-                </form>
-
-                <a class="enter-button" href="#">Iniciar</a>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section title="Window-Register" class="section-register hide" id="section-register">
-
-        <!-- <input type=" button " name="close " value="X " id="close-r ">
-
-            <h1>Registro</h1>
-            <input type="text " placeholder="Nombre " id="register-name " class="register-name ">
-            <input type="email " placeholder="e-mail " id="register-email " class="register-email ">
-            <input type="text " placeholder="Username " id="register-username " class="register-username ">
-            <input type="password " placeholder="Contraseña " id="register-password " class="register-password ">
-            <input type="password " placeholder="Confirmar Contraseña " id="register-cp " class="register-cp ">
-
-            <select name="Estado " size="1 " class="register-select " id="register-select ">
-               <option value="nothing ">Elige tu estado</option>
-               <option value="ags ">Aguascalientes</option>
-               <option value="bc ">Baja California</option>
-               <option value="bcs ">Baja California Sur</option>
-               <option value="camp ">Campeche</option>
-               <option value="chis ">Chiapas</option>
-               <option value="chih ">Chihuahua</option>
-               <option value="cdmx ">Ciudad de México</option>
-               <option value="coah ">Coahuila</option>
-               <option value="col ">Colima</option>
-               <option value="dgo ">Durango</option>
-               <option value="gto ">Guanajautao</option>
-               <option value="gro ">Guerrero</option>
-               <option value="hgo ">Hidalgo</option>
-               <option value="jal ">Jalisco</option>
-               <option value="edomex ">México</option>
-               <option value="mich ">Michoacán</option>
-               <option value="mor ">Morelos</option>
-               <option value="nay ">Nayarit</option>
-               <option value="nl ">Nuevo León</option>
-               <option value="oax ">Oaxaca</option>
-               <option value="pue ">Puebla</option>
-               <option value="qro ">Querétaro</option>
-               <option value="qroo ">Quintana Roo</option>
-               <option value="slp ">San Luis Potosí</option>
-               <option value="sin ">Sinaloa</option>
-               <option value="son ">Sonora</option>
-               <option value="tab ">Tabasco</option>
-               <option value="tamps ">Tamaulipas</option>              
-               <option value="tlax ">Tlaxcala</option>
-               <option value="ver ">Veracruz</option>
-               <option value="yuc ">Yucatán</option>
-               <option value="zac ">Zacatecas</option>
-           </select>
-
-            <input type="text " placeholder="Ciudad " class="register-city " id="register-city ">
-            <input type="text " placeholder="Unidad Habitacional " class="register-uhm " id="register-uhm ">
-
-            <input type="button " value="RegistrarMe " id="button-register " class="button-register ">
-        </div> -->
-        <div class="info-user register-body">
-            <h1>Registro</h1>
-            <form>
-                <div class="form-row register- ">
-                    <div class=" form-group col-md-6 register-select ">
-                        <label for="inputname ">Nombre</label>
-                        <input type="text " class="form-control register-name " id="register-name " placeholder="First name ">
-                    </div>
-                    <div class="form-group col-md-6 ">
-                        <label for="inputusername ">Username</label>
-                        <input type="text " class="form-control register-username " placeholder="Username ">
-                    </div>
-                </div>
-                <div class="form-row ">
-                    <div class="form-group col-md-6 ">
-                        <label for="inputEmail4 ">Email</label>
-                        <input type="email " class="form-control " id="inputEmail4 " placeholder="Email ">
-                    </div>
-                    <div class="form-group col-md-6 ">
-                        <label for="inputPassword4 ">Contraseña</label>
-                        <input type="password " class="form-control " id="inputPassword4 " placeholder="Password ">
-                    </div>
-                    <div class="form-group col-md-6 ">
-                        <label for="inputPassword4 ">Confirmar Contraseña</label>
-                        <input type="password " class="form-control " id="inputPassword5 ">
-                    </div>
-
-                </div>
-
-                <div class="form-row ">
-                    <div class="form-group col-md-4 info-user">
-                        <label for="inputState ">State</label>
-                        <select id="inputState " class="form-control ">
-                      <option selected>Choose...</option>                
-                            <option value="nothing ">Elige tu estado</option>
-                            <option value="ags ">Aguascalientes</option>
-                            <option value="bc ">Baja California</option>
-                            <option value="bcs ">Baja California Sur</option>
-                            <option value="camp ">Campeche</option>
-                            <option value="chis ">Chiapas</option>
-                            <option value="chih ">Chihuahua</option>
-                            <option value="cdmx ">Ciudad de México</option>
-                            <option value="coah ">Coahuila</option>
-                            <option value="col ">Colima</option>
-                            <option value="dgo ">Durango</option>
-                            <option value="gto ">Guanajautao</option>
-                            <option value="gro ">Guerrero</option>
-                            <option value="hgo ">Hidalgo</option>
-                            <option value="jal ">Jalisco</option>
-                            <option value="edomex ">México</option>
-                            <option value="mich ">Michoacán</option>
-                            <option value="mor ">Morelos</option>
-                            <option value="nay ">Nayarit</option>
-                            <option value="nl ">Nuevo León</option>
-                            <option value="oax ">Oaxaca</option>
-                            <option value="pue ">Puebla</option>
-                            <option value="qro ">Querétaro</option>
-                            <option value="qroo ">Quintana Roo</option>
-                            <option value="slp ">San Luis Potosí</option>
-                            <option value="sin ">Sinaloa</option>
-                            <option value="son ">Sonora</option>
-                            <option value="tab ">Tabasco</option>
-                            <option value="tamps ">Tamaulipas</option>              
-                            <option value="tlax ">Tlaxcala</option>
-                            <option value="ver ">Veracruz</option>
-                            <option value="yuc ">Yucatán</option>
-                            <option value="zac ">Zacatecas</option>
-                        </select>
-                        </select>
-                    </div>
-
-                </div>
-
-                <button type="button " value="RegistrarMe " id="button-register " class="button-register ">RegisterMe</button>
-
-            </form>
-        </div>
-
-    </section>
-
-
-
-    <!-- pruebas con el firebas -->
-
-
-
-    <!-- Archivo .js del firebase -->
-    <script type="text/javascript " src="firebase.js "></script>
-
-
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js "></script>
-    <script type="text/javascript " src="index.js "></script>
-    <script type="text/javascript " src="firebase.js "></script>
-    <!-- <script type="text/javascript " src="main.js "></script> -->
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Se hace un contenerdor para el header -->
+    <header id="header-container"></header>
+    <!-- Se hace un contenedor para el main -->
+    <main id="page-container" class="container pageEntry"></main>
+    <!-- Se hace un contenedor para el footer -->
+    <footer id="footer-container"></footer>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBHUStouS-ebrZIAVA8rpkCHPTqpIi5k40 ",
-            authDomain: "supporteme-147ea.firebaseapp.com ",
-            databaseURL: "https://supporteme-147ea.firebaseio.com ",
-            projectId: "supporteme-147ea ",
-            storageBucket: " ",
-            messagingSenderId: "1007267288966 ",
-            appId: "1:1007267288966:web:ab035c27ed063a27 "
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+
+    <!-- pruebas con el firebas -->
+    <script type="module" src="./app.js "></script>
+    <script type="text/javascript" src="firebase.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
