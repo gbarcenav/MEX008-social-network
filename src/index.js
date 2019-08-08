@@ -47,5 +47,5 @@ const closeregister = () => {
 }
 closerButton.addEventListener("click", closeregister);
 
-const useremail = document.getElementById("email-login").value;
-const userpass = document.getElementById("pass-login").value;
+// const useremail = document.getElementById("email-login").value;
+// const userpass = document.getElementById("pass-login").value;

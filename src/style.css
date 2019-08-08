@@ -16,7 +16,8 @@ figure {
 .register,
 .login,
 .logo,
-.welcome-page {
+.welcome-page,
+.section-register {
     display: flex;
     justify-content: center;
 }
@@ -66,7 +67,8 @@ figure {
 
 .login-button,
 .register-button,
-.enter-button {
+.enter-button,
+.button-register {
     text-decoration: none;
     padding: 10px;
     font-weight: 600;
@@ -108,7 +110,8 @@ figure {
 
 .login-button:hover,
 .register-button:hover,
-.enter-button:hover {
+.enter-button:hover,
+.button-register:hover {
     color: #faca6d;
     background-color: #ffffff;
 }
@@ -200,9 +203,9 @@ figure {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: #ECBCB1;
-    width: 100vw;
-    height: 100vh;
+    background-color: #CAC8CA;
+    width: 90vw;
+    height: auto;
 }
 
 [class^="register-"] {
@@ -222,9 +225,11 @@ figure {
     text-align: center;
     color: #4C4B62;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.button-register {
+
+/* .button-register {
     box-sizing: border-box;
     display: flex;
     padding: 3px;
@@ -236,4 +241,4 @@ figure {
     border: none;
     border-radius: 35px;
     justify-content: center;
-}
+} */
