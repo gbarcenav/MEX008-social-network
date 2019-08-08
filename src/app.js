@@ -50,7 +50,7 @@ const router = async () => {
     (request.resource ? "/" + request.resource : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? "/" + request.verb : "");
-  console.log("PARSED", parsedURL);
+  // console.log("PARSED", parsedURL);
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();
