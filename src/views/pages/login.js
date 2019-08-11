@@ -1,13 +1,13 @@
 let Login = {
-  render: async () => {
-    let view = /*html*/ `
-<section class="login hide" id="login">
+    render: async() => {
+        let view = /*html*/ `
+<section class="login" id="login">
 <div class="login-body">
 
     <div class="info-user">
         <input type="button" name="close" value="X" id="close">
-        <a class="fb-button" href="#">Iniciar sesión con facebook</a>
-        <a class="google-button" href="#">Iniciar sesión con google</a>
+        <a class="fb-button" href="#" id="btn-facebook">Iniciar sesión con facebook</a>
+        <input type="button" id="btn-gmail" class="google-button" value="Iniciar sesión con Google">
         <div>
             <div class="line">&nbsp;</div>
             <div class="leyend"> O </div>
@@ -23,49 +23,23 @@ let Login = {
 </div>
 </section>
 `;
-    return view;
-  },
-  // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
-  // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
-  after_render: async () => {
-    // aqui exportaras las funciones que necesites
-    // const loginButton = document.getElementById("login-button");
-    const registerButton = document.getElementById("register-button");
-    const closeButton = document.getElementById("close");
-
-    //function open or close sections
-    const hideSection = id => {
-      document.getElementById(id).classList.add("hide");
-    };
-    //Function that show section with id
-    const showSection = id => {
-      document.getElementById(id).classList.remove("hide");
-    };
-
-    //functions to change sections
-
-    // const goinglogin = () => {
-    //   hideSection("welcomepage");
-    //   hideSection("section-register");
-    //   showSection("login");
-    // };
-    // loginButton.addEventListener("click", goinglogin);
-
-    const goingregister = () => {
-      hideSection("welcomepage");
-      hideSection("login");
-      showSection("register");
-    };
-
-    registerButton.addEventListener("click", goingregister);
-
-    const closelogin = () => {
-      hideSection("login");
-      showSection("welcomepage");
-    };
-
-    closeButton.addEventListener("click", closelogin);
-  }
+        return view;
+    },
+    // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
+    // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
+    after_render: async() => {
+        // aqui exportaras las funciones que necesites
+        // const loginButton = document.getElementById("login-button");
+        // const registerButton = document.getElementById("register-button");
+        // const closeButton = document.getElementById("close");
+        const btnGmail = document.getElementById("btn-gmail");
+        const btnFacebook = document.getElementById("btn-facebook");
+        // loginButton.addEventListener("click", goinglogin);
+        // registerButton.addEventListener("click", goingregister);
+        // closeButton.addEventListener("click", closelogin);
+        btnGmail.addEventListener("click", registerGmail);
+        btnFacebook.addEventListener("click", signInFacebook);
+    }
 };
 
 export default Login;

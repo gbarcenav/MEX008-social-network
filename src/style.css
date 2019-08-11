@@ -116,9 +116,10 @@ figure {
     background-color: #ffffff;
 }
 
-.hide {
+
+/* .hide {
     display: none;
-}
+} */
 
 .info-user {
     width: fit-content;
