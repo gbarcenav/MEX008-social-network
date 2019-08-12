@@ -6,8 +6,8 @@ let Login = {
 
     <div class="info-user">
         <input type="button" name="close" value="X" id="close">
-        <a class="fb-button" href="#">Iniciar sesión con facebook</a>
-        <a class="google-button" href="#">Iniciar sesión con google</a>
+        <a id="loginFacebook" class="fb-button" href="#">Iniciar sesión con facebook</a>
+        <a id="loginGoogle" class="google-button" href="#">Iniciar sesión con google</a>
         <div>
             <div class="line">&nbsp;</div>
             <div class="leyend"> O </div>
@@ -29,13 +29,10 @@ let Login = {
   after_render: async () => {
 
     const boton = document.getElementById("enter-button");
-
     boton.addEventListener("click", loginS);
-    
- 
-    // aqui exportaras las funciones que necesites
 
-      
+    const btnGoogle = document.getElementById("loginGoogle");
+    btnGoogle.addEventListener("click", signGoogle);
   }
 };
 
