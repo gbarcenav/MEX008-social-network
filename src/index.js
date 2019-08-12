@@ -5,14 +5,14 @@
 // const closerButton = document.getElementById('close-r');
 
 
-// //function open or close sections
-// const hideSection = (id) => {
-//     document.getElementById(id).classList.add('hide');
-// };
-// //Function that show section with id
-// const showSection = (id) => {
-//     document.getElementById(id).classList.remove('hide');
-// };
+//function open or close sections
+const hideSection = (id) => {
+    document.getElementById(id).classList.add('hide');
+};
+//Function that show section with id
+const showSection = (id) => {
+    document.getElementById(id).classList.remove('hide');
+};
 
 //functions to change sections
 
@@ -31,12 +31,12 @@
 
 // registerButton.addEventListener("click", goingregister);
 
-// const closelogin = () => {
-//     hideSection('login');
-//     hideSection('section-register');
-//     showSection('welcomepage');
+const closelogin = () => {
+    hideSection('login');
+    hideSection('section-register');
+    showSection('welcomepage');
 
-// }
+}
 
 // closeButton.addEventListener("click", closelogin);
 

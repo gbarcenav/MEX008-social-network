@@ -1,27 +1,27 @@
 let Login = {
     render: async() => {
         let view = /*html*/ `
-<section class="login" id="login">
-<div class="login-body">
+        <section class="login" id="login">
+        <div class="login-body">
 
-    <div class="info-user">
-        <input type="button" name="close" value="X" id="close">
-        <a class="fb-button" href="#" id="btn-facebook">Iniciar sesión con facebook</a>
-        <input type="button" id="btn-gmail" class="google-button" value="Iniciar sesión con Google">
-        <div>
-            <div class="line">&nbsp;</div>
-            <div class="leyend"> O </div>
-            <div class="line">&nbsp;</div>
+            <div class="info-user">
+                <input type="button" class="fb-button"  id="btn-facebook" value="Iniciar sesión con Facebook">   
+                <input type="button" id="btn-gmail" class="google-button" value="Iniciar sesión con Google">
+
+                <input type="text" name="email" id="name-login" placeholder="Correo">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="password" id="pass-login" aria-describedby="passwordHelpInline" placeholder="Contraseña">
+                        <small id="passwordHelpInline" class="text-muted">
+                       <p aling="cemter">Must be 8-20 characters long.</p> 
+                      </small>
+                    </div>
+                </form>
+
+                <input type="button" id="login-count" class="enter-button" value="Iniciar">
+            </div>
         </div>
-        <div id="authentication-form">
-        <input type="text" name="email" id="email-login" placeholder="email" value="">
-        <input type="password" name="password" id="password-login" placeholder="Contraseña" value = "">
-        <button type="submit" class="enter-button">Iniciar</button>
-        <!-- <input type="submit" class="enter-button" href="#" name="" value="Iniciar"> -->
-        </div>
-    </div>
-</div>
-</section>
+    </section>
 `;
         return view;
     },

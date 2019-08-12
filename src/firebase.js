@@ -108,16 +108,12 @@ const closeSesion = () => {
         });
 }
 
-
-
-
-
 //Autenticarse con g-mail
 
 const btnGmail = document.getElementById("btn-gmail");
 
 const registerGmail = () => {
-    console.log('Hola');
+
     //crea una instancia del objeto del proveedor de Google
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -127,7 +123,8 @@ const registerGmail = () => {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        // ...
+        // ... 
+        console.log('Hola GMail');
     }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -167,9 +164,9 @@ const signInFacebook = () => {
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             const token = result.credential.accessToken;
             // The signed-in user info.
-            const user = result.user;
-            console.log("user");
-            // ...
+            const user = result.user
+                // ... 
+            console.log('Hola Facebook');
         }).then(() => goingHome())
         .catch(function(error) {
             // Handle Errors here.

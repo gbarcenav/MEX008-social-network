@@ -32,10 +32,10 @@ let Home = {
                </figure>
            </div>
            <div class="description">
-               <p>SupportMe te ayudará a mantener el contacto con antiguas amigas, vecinas y/o conocidas. Además con esta aplicación te podrás mantener informada acerca del nuevo lugar donde viviras haciendo más fácil el proceso de adaptación a tu nuevo
-                   hogar.
+               <p>SupportMe te ayudará a mantener el contacto con antiguas amigas, vecinas y/o conocidas. 
                </p>
            </div>
+
            <a id="login-button" class="login-button" href="#/login">Iniciar sesión</a>
            <a id="register-button" class="register-button" href="#/register">Registrarse</a>
    </section>
