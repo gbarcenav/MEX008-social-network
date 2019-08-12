@@ -6,7 +6,7 @@
 import Home from "./views/pages/home.js";
 import Login from "./views/pages/login.js";
 import Signin from "./views/pages/sign_in.js";
-// import Profile from "./vistas/paginas/profile.js";
+//import Profile from "./vistas/paginas/profile.js";
 // import Timeline from "./vistas/paginas/timeline.js";
 import Error404 from "./views/pages/error404.js";
 
@@ -24,7 +24,7 @@ const routes = {
   "/": Home,
   "/login": Login,
   "/register": Signin
-  // "/profile": Profile
+  // "/profile": Profile,
   // "/timeline": Timeline
 };
 

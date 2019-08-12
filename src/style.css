@@ -15,9 +15,11 @@ figure {
 .register,
 .login,
 .logo,
-.welcome-page {
-  display: flex;
-  justify-content: center;
+
+.welcome-page,
+.section-register {
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
@@ -26,8 +28,9 @@ figure {
 }
 
 .logo img {
-  margin-top: 2rem;
-  height: 85%;
+
+    height: 85%;
+
 }
 
 .welcome-body,
@@ -43,40 +46,44 @@ figure {
 }
 
 .login-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90vw;
-  height: 80vh;
-  background-color: #cac8ca;
-  margin: 2rem auto;
-  border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+    background-color: #CAC8CA;
+    margin: 4rem auto;
+    border-radius: 15px;
+
 }
 
 .login-body p {
   margin: 0 auto;
 }
+.welcome-body {
+    padding: 0rem 2rem;
+    text-align: justify;
+    color: #4c4b62;
 
-.welcome-body p {
-  padding: 0rem 2rem;
-  text-align: justify;
-  color: #4c4b62;
 }
 
 .login-button,
 .register-button,
-.enter-button {
-  text-decoration: none;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  color: #ffffff;
-  background-color: #faca6d;
-  border-radius: 6px;
-  border: 2px solid #f7dca8;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
+.enter-button,
+.button-register,
+#closer {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #faca6d;
+    border-radius: 6px;
+    border: 2px solid #f7dca8;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+
 
 .fb-button {
   text-decoration: none;
@@ -107,9 +114,18 @@ figure {
 
 .login-button:hover,
 .register-button:hover,
+
+.enter-button:hover,
+.button-register:hover,
+#closer:hover {
+    color: #faca6d;
+    background-color: #ffffff;
+}
+
 .enter-button:hover {
   color: #faca6d;
   background-color: #ffffff;
+
 }
 
 .info-user {
@@ -155,77 +171,88 @@ figure {
   margin-top: 10px;
 }
 
-#close:hover {
-  background-color: #4c4b62;
-  transform: scale(1.5);
-  font-size: 12px;
-  border-radius: 20px;
+
+
+.web {
+    display: hide;
 }
 
 @media only screen and (min-width: 768px) {
-  .register-body,
-  .login-body {
-    max-width: 60%;
-  }
-  .register-title {
-    width: 90%;
-    font-size: x-large;
-  }
-  .info-new-user input {
-    width: 20rem;
-  }
-  .budget-page {
-    width: 70%;
-  }
-  .register-title h1 {
-    margin: 0;
-    padding: 0.5rem;
-    font-size: 35px;
-  }
+    .section-register h1 {
+        text-align: center;
+        color: #4C4B62;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .logo img {
+        height: 85%;
+    }
+    .register-body,
+    .login-body {
+        max-width: 60%;
+    }
+    .register-title {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 35px;
+    }
+    .info-new-user input {
+        width: 20rem;
+    }
+    .budget-page {
+        width: 70%;
+    }
+    .register-title h1 {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 35px;
+    }
+    .description {
+        display: hide;
+    }
+    .section-register {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        align-content: center;
+    }
+
 }
+
 
 /* Sección de registro */
+
 .section-register {
-  box-sizing: border-box;
-  display: flex;
-  padding: 10px;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background: #ecbcb1;
-  width: 100vw;
-  height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #CAC8CA;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-content: center;
 }
 
-[class^="register-"] {
-  box-sizing: border-box;
-  display: flex;
-  border: solid #4c4b62 2px;
-  width: 300px;
-  height: 50px;
-  margin: 15px;
-  padding: 5px;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  font-family: "Cabin", sans-serif;
+.register {
+    box-sizing: border-box;
+    display: flex;
+    border: 2px solid #f7dca8;
+    width: 200px;
+    height: 45px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Cabin', sans-serif;
 }
 
 .section-register h1 {
-  text-align: center;
-  color: #4c4b62;
-  font-size: 2rem;
+    text-align: center;
+    color: #4C4B62;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.button-register {
-  box-sizing: border-box;
-  display: flex;
-  padding: 3px;
-  width: 180px;
-  height: 45px;
-  font-size: 1.5rem;
-  color: #ffffff;
-  background: #4c4b62;
-  border: none;
-  border-radius: 35px;
-  justify-content: center;
-}
