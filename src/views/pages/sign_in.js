@@ -39,14 +39,8 @@ let Signin = {
       //For que rellena el select con los nombres de los estados.
       for(let index=0; index<statesList.length; index ++){
         select.options[select.options.length]=new Option(statesList[index], index);
-      }
-
-   
-
-    const buttonRegister = document.getElementById("button-register");
+      } 
     boton.addEventListener("click", registerUser);
-    
-    
   }
 }
 

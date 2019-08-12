@@ -1,27 +1,20 @@
 let Login = {
     render: async() => {
         let view = /*html*/ `
-        <section class="login" id="login">
-        <div class="login-body">
+        
+<section class="login" id="login">
+  <div class="login-body">
 
-            <div class="info-user">
-                <input type="button" class="fb-button"  id="btn-facebook" value="Iniciar sesión con Facebook">   
-                <input type="button" id="btn-gmail" class="google-button" value="Iniciar sesión con Google">
-
-                <input type="text" name="email" id="name-login" placeholder="Correo">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <input type="password" id="pass-login" aria-describedby="passwordHelpInline" placeholder="Contraseña">
-                        <small id="passwordHelpInline" class="text-muted">
-                       <p aling="cemter">Must be 8-20 characters long.</p> 
-                      </small>
-                    </div>
-                </form>
-
-                <input type="button" id="login-count" class="enter-button" value="Iniciar">
-            </div>
-        </div>
-    </section>
+    <div class="info-user">
+        <input type="button" name="close" value="X" id="close">
+        <a id="loginFacebook" class="fb-button" href="#">Iniciar sesión con facebook</a>
+        <a id="loginGoogle" class="google-button" href="#">Iniciar sesión con google</a>
+    <div>
+            <div class="line">&nbsp;</div>
+            <div class="leyend"> O </div>
+            <div class="line">&nbsp;</div>
+    </div>
+   </section>
 `;
         return view;
     },
@@ -43,11 +36,11 @@ let Login = {
         btnFacebook.addEventListener("click", signInFacebook);
       
     const boton = document.getElementById("enter-button");
-
     boton.addEventListener("click", loginS);
-
-
-    }
+      
+    const btnGoogle = document.getElementById("loginGoogle");
+    btnGoogle.addEventListener("click", signGoogle);
+  }
 };
 
 export default Login;
