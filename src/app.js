@@ -16,6 +16,7 @@ import Footer from "./views/components/footer.js";
 
 // Archivo "utils"
 import Utils from "./services/utils.js";
+// import firebase  from "./firebase.js";
 
 // SE ENLISTAN LAS RUTAS ADMITIDAS.
 // Cualquier URL distinta de estas rutas arrojará un error 404
@@ -54,7 +55,7 @@ const router = async () => {
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();
-  await page.after_render();
+  await page.after_render();  
 };
 
 // Escucha el cambio de hash

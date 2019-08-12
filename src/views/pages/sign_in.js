@@ -2,79 +2,91 @@ let Signin = {
   render: async () => {
     let view = /*html*/ `
         <section title="Window-Register" class="section-register" id="section-register">
-        <div>
+        <form id="form-sign">
             <h1>Registro</h1>
-            <input type="text" placeholder="Nombre" id="register-name" class="register-name">
-            <input type="email" placeholder="e-mail" id="register-email" class="register-email">
-            <input type="text" placeholder="Username" id="register-username" class="register-username">
-            <input type="password" placeholder="Contraseña" id="register-password" class="register-password">
-            <input type="password" placeholder="Confirmar Contraseña" id="register-cp" class="register-cp">
+            <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
+            <input type="email" name="email" placeholder="e-mail" id="register-email" class="register-email">
+            <input type="text" name="username" placeholder="Username" id="register-username" class="register-username">
+            <input type="password" name="password" placeholder="Contraseña" id="register-password" class="register-password">
+            <input type="password" name="cpassword" placeholder="Confirmar Contraseña" id="register-cp" class="register-cp">
 
-            <select name="Estado" size="1" class="register-select" id="register-select">
-               <option value="nothing">Elige tu estado</option>
-               <option value="ags">Aguascalientes</option>
-               <option value="bc">Baja California</option>
-               <option value="bcs">Baja California Sur</option>
-               <option value="camp">Campeche</option>
-               <option value="chis">Chiapas</option>
-               <option value="chih">Chihuahua</option>
-               <option value="cdmx">Ciudad de México</option>
-               <option value="coah">Coahuila</option>
-               <option value="col">Colima</option>
-               <option value="dgo">Durango</option>
-               <option value="gto">Guanajautao</option>
-               <option value="gro">Guerrero</option>
-               <option value="hgo">Hidalgo</option>
-               <option value="jal">Jalisco</option>
-               <option value="edomex">México</option>
-               <option value="mich">Michoacán</option>
-               <option value="mor">Morelos</option>
-               <option value="nay">Nayarit</option>
-               <option value="nl">Nuevo León</option>
-               <option value="oax">Oaxaca</option>
-               <option value="pue">Puebla</option>
-               <option value="qro">Querétaro</option>
-               <option value="qroo">Quintana Roo</option>
-               <option value="slp">San Luis Potosí</option>
-               <option value="sin">Sinaloa</option>
-               <option value="son">Sonora</option>
-               <option value="tab">Tabasco</option>
-               <option value="tamps">Tamaulipas</option>              
-               <option value="tlax">Tlaxcala</option>
-               <option value="ver">Veracruz</option>
-               <option value="yuc">Yucatán</option>
-               <option value="zac">Zacatecas</option>
-           </select>
+            <select name="Estado" name="select-state" size="1" class="register-select" id="register-select">
+            </select>
 
-            <input type="text" placeholder="Ciudad" class="register-city" id="register-city">
-            <input type="text" placeholder="Unidad Habitacional" class="register-uhm" id="register-uhm">
-
-            <input type="button" value="RegistrarMe" id="button-register" class="button-register">
-        </div>
+            <input type="text" name="city" placeholder="Ciudad" class="register-city" id="register-city">
+            <input type="text" name="uhm" placeholder="Unidad Habitacional" class="register-uhm" id="register-uhm">
+            <input type="button" name="btn-register" value="RegistrarMe" id="button-register" class="button-register">
+        </form>
 
     </section>
+
         `;
     return view;
   },
-  // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
-  // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
   after_render: async () => {
-    document.getElementById("button-register").addEventListener("click", () => {
-      let email = document.getElementById("register-email");
-      let pass = document.getElementById("register-password");
-      let repeatPass = document.getElementById("register-cp");
-      if (pass.value != repeatPass.value) {
-        alert(`The passwords dont match`);
-      } else if (
-        (email.value == "") |
-        (pass.value == "") |
-        (repeatPass == "")
-      ) {
-        alert(`The fields cannot be empty`);
-      } else {
-        alert(`User with email ${email.value} was successfully submitted!`);
+      const formOne = document.getElementById("form-sign");
+      const select = document.getElementById("register-select");
+      const statesList = ["Elige un estado", "Aguascalientes", "Baja California", "Baja California Sur","Campeche", "Chihuahua", "Chiapas",
+                          "Ciudad de México", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", 
+                          "Jalisco", "Estado de México", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla",
+                          "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", 
+                          "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"]           
+      const boton = document.getElementById("button-register");
+
+      //For que rellena el select con los nombres de los estados.
+      for(let index=0; index<statesList.length; index ++){
+        select.options[select.options.length]=new Option(statesList[index], index);
       }
-    });
+
+    //firebase
+
+    //Archivos que se necesitan para usar firebase
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyBHUStouS-ebrZIAVA8rpkCHPTqpIi5k40",
+    authDomain: "supporteme-147ea.firebaseapp.com",
+    databaseURL: "https://supporteme-147ea.firebaseio.com",
+    projectId: "supporteme-147ea",
+    storageBucket: "supporteme-147ea.appspot.com",
+    messagingSenderId: "1007267288966",
+    appId: "1:1007267288966:web:ab035c27ed063a27"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    const registerUser = () => {
+
+        //Guardan los datos que ingresa el usuario para registrarse
+     const eMail = formOne.email.value;
+     const password = formOne.password.value;
+     const confirmPassword = formOne.cpassword.value;
+   
+     //Usamos la función de firebase para crear un usuario con contraseña y verificamos que su contraseña y su confirmación coincidan para poder registrarlo.
+
+     if(password === confirmPassword){
+       firebase.auth().createUserWithEmailAndPassword(eMail, password)
+        .then(function(){
+          console.log("Se ha enviado un e-mail a tu correo")
+        //sendEmailVerification();
+        .catch(function(error){
+          // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+          // ...
+            alert(error);
+            alert(errorMessage);
+         })
+        })
+     }else{
+       alert("La confirmación de contraseña no coincide");
+     }
+
+    
+
+  }
+
+      boton.addEventListener("click", registerUser);
+  
   }
 };
 
