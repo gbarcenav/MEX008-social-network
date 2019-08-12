@@ -32,13 +32,17 @@ let Login = {
         // const loginButton = document.getElementById("login-button");
         // const registerButton = document.getElementById("register-button");
         // const closeButton = document.getElementById("close");
+        const loginSession = document.getElementById("login-count");
         const btnGmail = document.getElementById("btn-gmail");
         const btnFacebook = document.getElementById("btn-facebook");
         // loginButton.addEventListener("click", goinglogin);
         // registerButton.addEventListener("click", goingregister);
         // closeButton.addEventListener("click", closelogin);
+        loginSession.addEventListener("click", loginS);
         btnGmail.addEventListener("click", registerGmail);
         btnFacebook.addEventListener("click", signInFacebook);
+
+
     }
 };
 

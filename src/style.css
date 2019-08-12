@@ -208,6 +208,11 @@ figure {
     .description {
         display: hide;
     }
+    .section-register {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        align-content: center;
+    }
 }
 
 

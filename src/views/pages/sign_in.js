@@ -17,7 +17,7 @@ let Signin = {
                 </div>
                 <div class="form-row ">
                     <div class=" col-md-6 ">
-                        <input type="text" placeholder="e-mail " id="register-email" class="register" >
+                        <input type="email" placeholder="e-mail " id="register-email" class="register" >
                     </div>
                     <div class="col-md-6 ">
                         <input type="password" aria-describedby="passwordHelpInline" placeholder="Contraseña " id="register-password" class="register" >
@@ -101,7 +101,11 @@ let Signin = {
             } else {
                 alert(`User with email ${email.value} was successfully submitted!`);
             }
+
         });
+        const buttonRegister = document.getElementById("button-register");
+        buttonRegister.addEventListener("click", register);
+
     }
 };
 

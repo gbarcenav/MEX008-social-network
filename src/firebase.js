@@ -10,9 +10,32 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+
+
+//Ingreso de usuario
+// const loginSession = document.getElementById("login-count");
+
+const loginS = () => {
+        const eMailA = document.getElementById("name-login").value;
+        const passwordA = document.getElementById("pass-login").value;
+
+        firebase.auth().signInWithEmailAndPassword(eMailA, passwordA)
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+                console.log(errorCode);
+                console.log(errorMessage);
+            });
+    }
+    // loginSession.addEventListener("click", loginS);
+
+
+
 //   Registrando un usuario con contraseña
 
-const buttonRegister = document.getElementById("button-register");
+// const buttonRegister = document.getElementById("button-register");
 
 const register = () => {
     const eMail = document.getElementById("register-email").value;
@@ -34,26 +57,6 @@ const register = () => {
 }
 
 // buttonRegister.addEventListener("click", register);
-
-//Ingreso de usuario
-const loginSession = document.getElementById("login-count");
-
-const loginS = () => {
-        const eMailA = document.getElementById("name-login").value;
-        const passwordA = document.getElementById("pass-login").value;
-
-        firebase.auth().signInWithEmailAndPassword(eMailA, passwordA)
-            .catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-                console.log(errorCode);
-                console.log(errorMessage);
-            });
-    }
-    // loginSession.addEventListener("click", loginS);
-
 
 //Verifica siempre la pagina Web
 const observador = () => {
@@ -110,7 +113,7 @@ const closeSesion = () => {
 
 //Autenticarse con g-mail
 
-const btnGmail = document.getElementById("btn-gmail");
+// const btnGmail = document.getElementById("btn-gmail");
 
 const registerGmail = () => {
 
