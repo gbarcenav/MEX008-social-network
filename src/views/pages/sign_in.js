@@ -1,7 +1,8 @@
 let Signin = {
-  render: async () => {
-    let view = /*html*/ `
+    render: async() => {
+        let view = /*html*/ `
         <section title="Window-Register" class="section-register" id="section-register">
+
         <form id="form-sign">
             <h1>Registro</h1>
             <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
@@ -18,9 +19,11 @@ let Signin = {
             <input type="button" name="btn-register" value="RegistrarMe" id="button-register" class="button-register">
         </form>
 
+
     </section>
 
         `;
+
     return view;
   },
   after_render: async () => {
@@ -40,7 +43,7 @@ let Signin = {
 
    
 
-    
+    const buttonRegister = document.getElementById("button-register");
     boton.addEventListener("click", registerUser);
     
     
