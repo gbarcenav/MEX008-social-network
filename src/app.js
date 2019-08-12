@@ -24,7 +24,7 @@ const routes = {
   "/": Home,
   "/login": Login,
   "/register": Signin
-  // "/profile": Profile,
+  // "/profile": Profile
   // "/timeline": Timeline
 };
 
@@ -55,7 +55,7 @@ const router = async () => {
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();
-  await page.after_render();  
+  await page.after_render();
 };
 
 // Escucha el cambio de hash
