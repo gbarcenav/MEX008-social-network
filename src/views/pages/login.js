@@ -41,6 +41,10 @@ let Login = {
         loginSession.addEventListener("click", loginS);
         btnGmail.addEventListener("click", registerGmail);
         btnFacebook.addEventListener("click", signInFacebook);
+      
+    const boton = document.getElementById("enter-button");
+
+    boton.addEventListener("click", loginS);
 
 
     }
