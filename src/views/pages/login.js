@@ -17,7 +17,7 @@ let Login = {
         <input type="text" name="email" id="email-login" placeholder="email" value="">
         <input type="password" name="password" id="password-login" placeholder="Contraseña" value = "">
         <button type="submit" class="enter-button">Iniciar</button>
-        <!-- <input type="submit" class="enter-button" href="#" name="" value="Iniciar"> -->
+        <!-- <input type="submit" class="enter-button" href="#/profile" name="" value="Iniciar"> -->
         </div>
     </div>
 </div>
