@@ -11,7 +11,8 @@ import Timeline from "./views/pages/timeline.js";
 import Error404 from "./views/pages/error404.js";
 
 //Componentes o navbar y footer
-import Navbar from "./views/components/navbar.js";
+import navbarProfile from "./views/components/navbar.js";
+import navbarTimeline from "./views/components/navbar-timeline.js";
 
 // Archivo "utils"
 import Utils from "./services/utils.js";
@@ -36,8 +37,10 @@ const router = async () => {
   const main = null || document.getElementById("page-container");
 
   //Representa los elementos estático en la página
-  header.innerHTML = await Navbar.render();
-  await Navbar.after_render();
+  header.innerHTML = await navbarProfile.render();
+  await navbarProfile.after_render();
+  header.innerHTML = await navbarTimeline.render();
+  await navbarTimeline.after_render();
 
   // Obtener el URL analizado de la barra de direcciones
   let request = Utils.parseRequestURL();
@@ -47,7 +50,21 @@ const router = async () => {
     (request.resource ? "/" + request.resource : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? "/" + request.verb : "");
-  // console.log("PARSED", parsedURL);
+
+  // Proveé una navbar diferente para sección PROFILE y Timeline y la quita en las otras secciones
+  if (parsedURL === "/") {
+    header.style.display = "none";
+  } else if (parsedURL === "/register") {
+    header.style.display = "none";
+  } else if (parsedURL === "/login") {
+    header.style.display = "none";
+  } else if (parsedURL === "/profile") {
+    header.innerHTML = await navbarProfile.render();
+    header.style.display = "block";
+  } else if (parsedURL === "/timeline") {
+    header.innerHTML = await navbarTimeline.render();
+    header.style.display = "block";
+  }
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();
