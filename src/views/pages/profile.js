@@ -24,7 +24,7 @@ let Profile = {
     </header>
 
     <div class="container-post" id="">
-          <button class="delete-btn" id="">
+          <button class="delete-btn" id="show-modal-delete">
             <img src="./img/delete.png" alt="eliminar" />
           </button>
           <div class="text-post">
@@ -35,7 +35,7 @@ let Profile = {
           <p class="commentary">
             Las pizzas de este lugar están muy ricas y a muy buen precio
           </p>
-          <a href="" class="contact">Contacto</a>
+          <a href="" id="" class="contact">Contacto</a>
           <figure class="stars">
             <img src="./img/iconos.png" alt="Calificación 4 Estrellas " />
           </figure>
@@ -61,6 +61,74 @@ let Profile = {
     //   .catch(function(error) {
     //     console.error("Error adding document: ", error);
     //   });
+
+    // MODAL
+    // Añadir un objeto de atributos a un elemento
+    const addAttributes = (element, attrObj) => {
+      for (let attr in attrObj) {
+        if (attrObj.hasOwnProperty(attr))
+          element.setAttribute(attr, attrObj[attr]);
+      }
+    };
+    // Crear elementos con atributos e hijo
+    const createCustomElement = (element, attributes, children) => {
+      let customElement = document.createElement(element);
+      if (children !== undefined)
+        children.forEach(el => {
+          if (el.nodeType) {
+            if (el.nodeType === 1 || el.nodeType === 11)
+              customElement.appendChild(el);
+          } else {
+            customElement.innerHTML += el;
+          }
+        });
+      addAttributes(customElement, attributes);
+      return customElement;
+    };
+    // Imprimir modal eliminar publicación
+    const printModal = content => {
+      // Crear contenedor interno
+      const modalContentElement = createCustomElement(
+          "div",
+          {
+            id: "modal-content-delete",
+            class: "modal-content-delete"
+          },
+          [content]
+        ),
+        // Crear contenedor principal
+        modalContainerElement = createCustomElement(
+          "div",
+          {
+            id: "modal-container-delete",
+            class: "modal-container-delete"
+          },
+          [modalContentElement]
+        );
+
+      document.body.appendChild(modalContainerElement);
+
+      const removeModal = () =>
+        document.body.removeChild(modalContainerElement);
+
+      modalContainerElement.addEventListener("click", e => {
+        const btnNo = document.getElementById("no-btn");
+        if (e.target === modalContainerElement || e.target === btnNo)
+          removeModal();
+      });
+    };
+
+    const deleteQuestion = `<div class="elements-modal-delete">
+    <p>¿Deseas eliminar<br>esta publicación?</p>
+    <button class="btn-blue" id="yes-btn">Sí</button>
+    <button class="btn-blue" id="no-btn">No</button>
+  </div>`;
+    document
+      .getElementById("show-modal-delete")
+      .addEventListener("click", () => {
+        printModal(deleteQuestion);
+      });
+
     // GABY--------------------------
   }
 };
