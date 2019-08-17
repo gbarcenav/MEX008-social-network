@@ -1,36 +1,19 @@
 //Archivos que se necesitan para usar firebase
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyBHUStouS-ebrZIAVA8rpkCHPTqpIi5k40",
-  authDomain: "supporteme-147ea.firebaseapp.com",
-  databaseURL: "https://supporteme-147ea.firebaseio.com",
-  projectId: "supporteme-147ea",
-  storageBucket: "supporteme-147ea.appspot.com",
-  messagingSenderId: "1007267288966",
-  appId: "1:1007267288966:web:ab035c27ed063a27"
+  apiKey: "AIzaSyDGhmuAIAHIH_sHref9YI0QiXhAhkc1OpU",
+  authDomain: "supportme-565d4.firebaseapp.com",
+  databaseURL: "https://supportme-565d4.firebaseio.com",
+  projectId: "supportme-565d4",
+  storageBucket: "supportme-565d4.appspot.com",
+  messagingSenderId: "811873389744",
+  appId: "1:811873389744:web:7c5179900d830cfa"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+//GABY--------
+//GABY--------
 
-//Ingreso de usuario
-const loginS = () => {
-  const eMailA = document.getElementById("email-login").value;
-  const passwordA = document.getElementById("password-login").value;
-
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(eMailA, passwordA)
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
-  console.log("Bienvenido a supportMe");
-};
-
+//Registro de usuario
 const registerUser = () => {
   const formOne = document.getElementById("form-sign");
   //Guardan los datos que ingresa el usuario para registrarse
@@ -87,25 +70,6 @@ const observador = () => {
   });
 };
 observador();
-const register = (email, password) => {
-  //Usamos la función de firebase para crear un usuario con contraseña
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(function() {
-      console.log("Se ha enviado un e-mail a tu correo");
-      //    sendEmailVerification();
-    })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      console.log(error);
-      console.log(errorMessage);
-    });
-  return firebase;
-};
 
 const sendEmailVerification = () => {
   // [START sendemailverification]
@@ -124,4 +88,90 @@ const sendEmailVerification = () => {
     });
 };
 
-window.register = register;
+//Inicio de sesión
+const loginS = () => {
+  const eMailA = document.getElementById("email-login").value;
+  const passwordA = document.getElementById("password-login").value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(eMailA, passwordA)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
+  console.log("Bienvenido a supportMe");
+};
+
+//Autenticarse con g-mail
+// const btnGmail = document.getElementById("btn-gmail");
+const registerGmail = () => {
+  //crea una instancia del objeto del proveedor de Google
+  const provider = new firebase.auth.GoogleAuthProvider();
+  //Autentica a traves de una ventana emergente
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+      console.log("Hola GMail");
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+      console.log("token");
+    });
+};
+// btnGmail.addEventListener("click", registerGmail);
+//Autentificación con Facebook
+const signInFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function(result) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const token = result.credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+      console.log("Hola Facebook");
+    })
+    .then(() => goingHome())
+    .catch(function(error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      const credential = error.credential;
+      // ...
+    });
+};
+// Cerrar sesión
+const closeSesion = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(function() {
+      console.log("Saliendo...");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+};

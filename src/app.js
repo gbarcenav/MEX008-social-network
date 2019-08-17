@@ -6,26 +6,25 @@
 import Home from "./views/pages/home.js";
 import Login from "./views/pages/login.js";
 import Signin from "./views/pages/sign_in.js";
-// import Profile from "./vistas/paginas/profile.js";
-// import Timeline from "./vistas/paginas/timeline.js";
+import Profile from "./views/pages/profile.js";
+import Timeline from "./views/pages/timeline.js";
 import Error404 from "./views/pages/error404.js";
 
 //Componentes o navbar y footer
 import Navbar from "./views/components/navbar.js";
-import Footer from "./views/components/footer.js";
 
 // Archivo "utils"
 import Utils from "./services/utils.js";
-// import firebase  from "./firebase.js";
+// import firebase from "./firebase.js";
 
 // SE ENLISTAN LAS RUTAS ADMITIDAS.
 // Cualquier URL distinta de estas rutas arrojará un error 404
 const routes = {
   "/": Home,
   "/login": Login,
-  "/register": Signin
-  // "/profile": Profile,
-  // "/timeline": Timeline
+  "/register": Signin,
+  "/profile": Profile,
+  "/timeline": Timeline
 };
 
 // El código del enrutador.
@@ -35,13 +34,10 @@ const router = async () => {
   // Se visualizan solo los elementos en turno
   const header = null || document.getElementById("header-container");
   const main = null || document.getElementById("page-container");
-  const footer = null || document.getElementById("footer-container");
 
   //Representa los elementos estático en la página
   header.innerHTML = await Navbar.render();
   await Navbar.after_render();
-  footer.innerHTML = await Footer.render();
-  await Footer.after_render();
 
   // Obtener el URL analizado de la barra de direcciones
   let request = Utils.parseRequestURL();
