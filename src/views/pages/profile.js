@@ -23,6 +23,8 @@ let Profile = {
       </div>
     </header>
 
+    <button class="btn-share" id="btn-share">Compártenos tu recomendación/queja</button>
+
     <div class="container-post" id="">
           <button class="delete-btn" id="show-modal-delete">
             <img src="./img/delete.png" alt="eliminar" />
@@ -61,6 +63,7 @@ let Profile = {
     //   .catch(function(error) {
     //     console.error("Error adding document: ", error);
     //   });
+    // GABY--------------------------
 
     // MODAL
     // Añadir un objeto de atributos a un elemento
@@ -86,9 +89,9 @@ let Profile = {
       return customElement;
     };
     // Imprimir modal eliminar publicación
-    const printModal = content => {
+    const printModalDelete = content => {
       // Crear contenedor interno
-      const modalContentElement = createCustomElement(
+      const modalContentElementDelete = createCustomElement(
           "div",
           {
             id: "modal-content-delete",
@@ -97,24 +100,24 @@ let Profile = {
           [content]
         ),
         // Crear contenedor principal
-        modalContainerElement = createCustomElement(
+        modalContainerElementDelete = createCustomElement(
           "div",
           {
             id: "modal-container-delete",
             class: "modal-container-delete"
           },
-          [modalContentElement]
+          [modalContentElementDelete]
         );
 
-      document.body.appendChild(modalContainerElement);
+      document.body.appendChild(modalContainerElementDelete);
 
-      const removeModal = () =>
-        document.body.removeChild(modalContainerElement);
+      const removeModalDelete = () =>
+        document.body.removeChild(modalContainerElementDelete);
 
-      modalContainerElement.addEventListener("click", e => {
+      modalContainerElementDelete.addEventListener("click", e => {
         const btnNo = document.getElementById("no-btn");
-        if (e.target === modalContainerElement || e.target === btnNo)
-          removeModal();
+        if (e.target === modalContainerElementDelete || e.target === btnNo)
+          removeModalDelete();
       });
     };
 
@@ -126,51 +129,93 @@ let Profile = {
     document
       .getElementById("show-modal-delete")
       .addEventListener("click", () => {
-        printModal(deleteQuestion);
+        printModalDelete(deleteQuestion);
       });
 
-    // GABY--------------------------
+    // GABY-------------------------------------------------------------------------------------------------
+
+    // Imprimir modal formulario publicación
+    const printNewPost = content => {
+      // Crear contenedor interno
+      const modalContentNewPost = createCustomElement(
+          "div",
+          {
+            id: "modal-content-n-post",
+            class: "modal-content-n-post"
+          },
+          [content]
+        ),
+        // Crear contenedor principal
+        modalContainerNewPost = createCustomElement(
+          "div",
+          {
+            id: "modal-container-n-post",
+            class: "modal-container-n-post"
+          },
+          [modalContentNewPost]
+        );
+
+      document.body.appendChild(modalContainerNewPost);
+
+      const removeModalNewPost = () =>
+        document.body.removeChild(modalContainerNewPost);
+
+      modalContainerNewPost.addEventListener("click", e => {
+        const closeBtn = document.getElementById("close-btn-form");
+        if (e.target === modalContainerNewPost || e.target === closeBtn)
+          removeModalNewPost();
+      });
+    };
+
+    const formNewPost = `
+    <span class="close-btn" ><img src="./img/close-08.png" alt="Cerrar" id="close-btn-form"></span>
+    <form class="container-newpost" id="form-newpost">
+    <p style="display: block"> Tienes una...</p>
+    <input type="radio"  style="width:20px;height:20px" name="option" value="recommend" id="input-recommend"><p style="color:#FF9E03">Recomendación</p>
+    <!-- <br> -->
+    <input type="radio" style="width:20px;height:20px" name="option" value="complain" id="input-complain"><p style="color:#F18E8C">Queja</p>
+    <input
+      type="text"
+      id="name-company"
+      placeholder="Nombre de la empresa o persona"
+      class="form-input"
+    />
+    <textarea
+    placeholder="Agrega un comentario"
+      name="textarea"
+      rows="3"
+      cols="33"
+      id="new-comment"
+      class=""
+    ></textarea>
+
+    <input
+      type="text"
+      id="adress"
+      placeholder="Dirección"
+      class="form-input"
+    />
+
+    <input
+      type="number"
+      id="telephone"
+      placeholder="Teléfono"
+      class="form-input"
+    />
+
+    <input
+      type="number"
+      id="score-stars"
+      placeholder="Número de estrellas"
+      class="form-input" style="
+      width: 145px;"
+    />
+
+    <button class="btn-blue" id="add-n-post">Agregar</button>
+  </form>`;
+    document.getElementById("btn-share").addEventListener("click", () => {
+      printNewPost(formNewPost);
+    });
   }
 };
 export default Profile;
-
-// FORMULARIO NUEVA PUBLICACIÓN
-/* <form class="container-newpost" id="form-newpost">
-          
-          <input
-            type="text"
-            id="name-company"
-            placeholder="Nombre de la empresa o persona"
-            class="form-name-company"
-          />
-          <textarea
-          placeholder="Agrega un comentario"
-            name="textarea"
-            rows="3"
-            cols="33"
-            id="new-comment"
-            class="form-new-comment"
-          ></textarea>
-
-          <input
-            type="text"
-            id="adress"
-            placeholder="Dirección"
-            class="form-adress"
-          />
-
-          <input
-            type="number"
-            id="telephone"
-            placeholder="Teléfono"
-            class="form-telephone"
-          />
-
-          <input
-            type="number"
-            id="score-stars"
-            placeholder="Número de estrellas"
-            class="form-stars" style="
-            width: 145px;"
-          />
-        </form> */

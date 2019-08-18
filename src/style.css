@@ -273,6 +273,24 @@ body {
   font-size: 11px;
 }
 
+/* Botón compartir */
+.btn-share {
+  width: 270px;
+  height: 40px;
+  font-family: "Cabin", sans-serif;
+  font-size: 15px;
+  color: #4c4b62;
+  background: #ecbcb1;
+  border-color: #4c4b62;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: solid 3px;
+  font-weight: 600;
+}
+
 /* Estilos publicación en perfil */
 .container-post {
   width: 80vw;
@@ -299,7 +317,7 @@ body {
 }
 
 .delete-btn img {
-  width: 15px;
+  width: 24px;
 }
 
 .delete-btn {
@@ -311,6 +329,7 @@ body {
   display: block;
   left: 242px;
   cursor: pointer;
+  z-index: 80;
 }
 
 .recommendation {
@@ -340,6 +359,26 @@ body {
   left: 63px;
 }
 
+/* Estilos modal nuevo post */
+.modal-container-n-post {
+  background: rgba(76, 75, 98, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  z-index: 101;
+}
+
+.modal-content-n-post {
+  width: 80vw;
+  height: 70vh;
+  background: #bdd5d7;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
 /* Estilos modal eliminar */
 .modal-container-delete {
   background: rgba(76, 75, 98, 0.8);
@@ -377,9 +416,24 @@ body {
   width: 80vw;
   text-align: center;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 8px;
+  margin-top: 30px;
 }
-.container-newpost input {
+
+.close-btn img {
+  width: 23px;
+}
+
+.close-btn {
+  width: 50px;
+  height: 50px;
+  align-content: center;
+  position: relative;
+  left: 280px;
+  top: 20px;
+}
+
+.form-input {
   width: 247px;
   height: 30px;
   font-family: "Cabin", sans-serif;
@@ -392,6 +446,13 @@ body {
   margin: 10px;
   border: solid 3px;
   padding-left: 5px;
+}
+
+.container-newpost p {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: left;
+  display: inline;
 }
 
 .container-newpost textarea {
