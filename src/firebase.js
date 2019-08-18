@@ -175,3 +175,41 @@ const closeSesion = () => {
       console.log(error);
     });
 };
+
+// GABY--------------------------
+// // Initialize Cloud Firestore through Firebase
+// // const saveBtn = document.getElementById("add-n-post");
+
+// var db = firebase.firestore();
+
+// // const savePost = () => {
+
+// function save() {
+//   //     let recommendOption = document.getElementById("input-recommend");
+//   // let complaindOption = document.getElementById("input-complain");
+//   var nameCompanyPerson = document.getElementById("name-company").value;
+//   var newComment = document.getElementById("new-comment").value;
+//   var adressCompany = document.getElementById("adress").value;
+//   var telephoneCompany = document.getElementById("adress").value;
+//   var mobileTelephone = document.getElementById("mobile").value;
+//   var ratingStars = document.getElementById("score-stars").value;
+//   db.collection("newPost")
+//     .add({
+//       // type: "recommendOption || complaindOption",
+//       name: nameCompanyPerson,
+//       comment: newComment,
+//       adress: adressCompany,
+//       telphone: telephoneCompany,
+//       mobile: mobileTelephone,
+//       stars: ratingStars
+//     })
+//     .then(function(docRef) {
+//       console.log("Document written with ID: ", docRef.id);
+//     })
+//     .catch(function(error) {
+//       console.error("Error adding document: ", error);
+//     });
+// }
+// //   saveBtn.addEventListener("click", savePost);
+// // };
+// GABY--------------------------
