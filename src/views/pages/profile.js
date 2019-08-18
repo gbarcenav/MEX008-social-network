@@ -37,7 +37,7 @@ let Profile = {
           <p class="commentary">
             Las pizzas de este lugar están muy ricas y a muy buen precio
           </p>
-          <a href="" id="" class="contact">Contacto</a>
+          <button id="show-modal-contact" class="contact">Contacto</button>
           <figure class="stars">
             <img src="./img/iconos.png" alt="Calificación 4 Estrellas " />
           </figure>
@@ -216,6 +216,57 @@ let Profile = {
     document.getElementById("btn-share").addEventListener("click", () => {
       printNewPost(formNewPost);
     });
+
+    // Imprimir modal contacto
+    const printModalContact = content => {
+      // Crear contenedor interno
+      const modalContentContact = createCustomElement(
+          "div",
+          {
+            id: "contact-modal",
+            class: "contact-modal"
+          },
+          [content]
+        ),
+        // Crear contenedor principal
+        modalContainerElementContact = createCustomElement(
+          "div",
+          {
+            id: "modal-container-contact",
+            class: "modal-container-contact"
+          },
+          [modalContentContact]
+        );
+
+      document.body.appendChild(modalContainerElementContact);
+
+      const removeModalContact = () =>
+        document.body.removeChild(modalContainerElementContact);
+
+      modalContainerElementContact.addEventListener("click", e => {
+        const btnCloseContact = document.getElementById("close-contact");
+        if (
+          e.target === modalContainerElementContact ||
+          e.target === btnCloseContact
+        )
+          removeModalContact();
+      });
+    };
+
+    const contactData = `<figure><img src="./img/close-08.png" alt="Cerrar" id="close-contact"></figure>
+    <div class="contact-modal-elements">
+    <h2 class="data-contact">Datos de contacto</h2>
+    <div class="data-contact-prin"><h3 class="data-contact">Dirección</h3>
+      <img src="./img/icon-contact-11.png" alt="icono de dirección" class="adress-icon"><p>Calle Constitución de 1917 #62, Departamento 105 Piso 1, Ciudad de México, Alcaldía Cuauhtémoc, CDMX</p></div>
+    <div class="data-contact-prin"><h3>Telefóno o/y WhatsApp</h3>
+      <div class="data-contact"><img src="./img/icon-contact-12.png" alt="icono WhatsApp"><p>55 13 82 74 17</p></div>
+      <div class="data-contact"><img src="./img/icon-contact-10.png" alt="icono teléfono"><p>57 09 34 25</p></div></div>
+    </div>`;
+    document
+      .getElementById("show-modal-contact")
+      .addEventListener("click", () => {
+        printModalContact(contactData);
+      });
   }
 };
 export default Profile;
