@@ -48,23 +48,6 @@ let Profile = {
     return view;
   },
   after_render: async () => {
-    // GABY--------------------------
-    // Initialize Cloud Firestore through Firebase
-    // var db = firebase.firestore();
-    // db.collection("users")
-    //   .add({
-    //     first: "Nadia",
-    //     last: "Love",
-    //     born: 1813
-    //   })
-    //   .then(function(docRef) {
-    //     console.log("Document written with ID: ", docRef.id);
-    //   })
-    //   .catch(function(error) {
-    //     console.error("Error adding document: ", error);
-    //   });
-    // GABY--------------------------
-
     // MODAL
     // Añadir un objeto de atributos a un elemento
     const addAttributes = (element, attrObj) => {
@@ -131,8 +114,6 @@ let Profile = {
       .addEventListener("click", () => {
         printModalDelete(deleteQuestion);
       });
-
-    // GABY-------------------------------------------------------------------------------------------------
 
     // Imprimir modal formulario publicación
     const printNewPost = content => {
@@ -202,6 +183,13 @@ let Profile = {
       placeholder="Teléfono"
       class="form-input"
     />
+    
+    <input
+      type="number"
+      id="mobile"
+      placeholder="Móvil/WhatsApp"
+      class="form-input"
+    />
 
     <input
       type="number"
@@ -210,9 +198,9 @@ let Profile = {
       class="form-input" style="
       width: 145px;"
     />
-
-    <button class="btn-blue" id="add-n-post">Agregar</button>
-  </form>`;
+    <button class="btn-blue" id="add-n-post" onclick="save()">Agregar</button>
+</form>
+`;
     document.getElementById("btn-share").addEventListener("click", () => {
       printNewPost(formNewPost);
     });
