@@ -1,17 +1,5 @@
 //Archivos que se necesitan para usar firebase
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyDGhmuAIAHIH_sHref9YI0QiXhAhkc1OpU",
-  authDomain: "supportme-565d4.firebaseapp.com",
-  databaseURL: "https://supportme-565d4.firebaseio.com",
-  projectId: "supportme-565d4",
-  storageBucket: "supportme-565d4.appspot.com",
-  messagingSenderId: "811873389744",
-  appId: "1:811873389744:web:7c5179900d830cfa"
-};
 firebase.initializeApp(firebaseConfig);
-//GABY--------
-//GABY--------
 
 //Registro de usuario
 const registerUser = () => {
@@ -96,6 +84,7 @@ const loginS = () => {
   firebase
     .auth()
     .signInWithEmailAndPassword(eMailA, passwordA)
+
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -124,6 +113,7 @@ const registerGmail = () => {
       // ...
       console.log("Hola GMail");
     })
+    .then(() => goProfile())
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -151,7 +141,7 @@ const signInFacebook = () => {
       // ...
       console.log("Hola Facebook");
     })
-    .then(() => goingHome())
+    .then(() => goProfile())
     .catch(function(error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -163,12 +153,19 @@ const signInFacebook = () => {
       // ...
     });
 };
+
+const goProfile = () => {
+  location.hash = "/profile";
+};
+
 // Cerrar sesión
 const closeSesion = () => {
+  // alert("solo");
   firebase
     .auth()
     .signOut()
     .then(function() {
+      // alert("salio usuario");
       console.log("Saliendo...");
     })
     .catch(function(error) {
