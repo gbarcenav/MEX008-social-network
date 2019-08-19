@@ -5,7 +5,7 @@ let Signin = {
     <a href=""><img class="return" src="./img/icon-06.png" alt="Ir atrás"></a>
     <div class="signin-elements">
         <h2>RegistrarMe</h2>
-      <form id="form-sign">
+      <form id="form-sign" class="form-signin-st">
       <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
       <input type="text" name="lastName" placeholder="Apellido" id="register-lastname" class="lastname">
       <input type="email" name="email" placeholder="e-mail" id="register-email" class="register-email">
