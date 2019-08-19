@@ -84,7 +84,7 @@ const loginS = () => {
   firebase
     .auth()
     .signInWithEmailAndPassword(eMailA, passwordA)
-
+     .then(() => goProfile())
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
