@@ -150,14 +150,24 @@ let Profile = {
     <span class="close-btn" ><img src="./img/close-08.png" alt="Cerrar" id="close-btn-form"></span>
     <form class="container-newpost" id="form-newpost">
     <p style="display: block"> Tienes una...</p>
-    <input type="radio"  style="width:20px;height:20px" name="option" value="recommend" id="input-recommend"><p style="color:#FF9E03">Recomendación</p>
-    <!-- <br> -->
+    <input type="radio"  style="width:20px;height:20px" name="option" value="recommend" id="input-recommend" required><p style="color:#FF9E03">Recomendación</p>
     <input type="radio" style="width:20px;height:20px" name="option" value="complain" id="input-complain"><p style="color:#F18E8C">Queja</p>
+    <input
+      type="text"
+      id="type-service"
+      placeholder="Tipo de servicio"
+      class="form-input"
+      maxlength="20"
+      required
+    />
+
     <input
       type="text"
       id="name-company"
       placeholder="Nombre de la empresa o persona"
       class="form-input"
+      maxlength="50"
+      required
     />
     <textarea
     placeholder="Agrega un comentario"
@@ -166,6 +176,8 @@ let Profile = {
       cols="33"
       id="new-comment"
       class=""
+      maxlength="60"
+      required
     ></textarea>
 
     <input
@@ -173,17 +185,22 @@ let Profile = {
       id="adress"
       placeholder="Dirección"
       class="form-input"
+      maxlength="100"
     />
 
     <input
-      type="number"
+      type="tel"
+      name="telephone"
+      pattern="[0-9]{8}"
       id="telephone"
       placeholder="Teléfono"
       class="form-input"
     />
     
     <input
-      type="number"
+      type="tel"
+      name="mobile telephone"
+      pattern="[0-9]{10}"
       id="mobile"
       placeholder="Móvil/WhatsApp"
       class="form-input"
@@ -191,12 +208,16 @@ let Profile = {
 
     <input
       type="number"
+      maxlength="1"
+      min="1"
+      max="5"
       id="score-stars"
       placeholder="Número de estrellas"
       class="form-input" style="
       width: 145px;"
+      required
     />
-    <button class="btn-blue" id="add-n-post" onclick="save()">Agregar</button>
+    <button class="btn-blue" id="add-n-post">Agregar</button>
 </form>
 `;
     document.getElementById("btn-share").addEventListener("click", () => {

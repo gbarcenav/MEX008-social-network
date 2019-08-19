@@ -378,7 +378,6 @@ body {
 }
 
 .modal-content-n-post {
-  width: 80vw;
   height: 70vh;
   background: #bdd5d7;
   border-radius: 20px;
@@ -424,7 +423,7 @@ body {
   text-align: center;
   margin-left: auto;
   margin-right: 8px;
-  margin-top: 30px;
+  margin-top: -2px;
 }
 
 .close-btn img {
@@ -741,7 +740,7 @@ body {
     height: 45vh;
   }
   .img-text-profile {
-    width: 35%;
+    width: 50%;
     margin-top: 9%;
   }
   .shape-circule {
@@ -810,5 +809,72 @@ body {
   .stars {
     left: 329px;
     top: 28px;
+  }
+
+  /* NAVBAR TIMELINE */
+  .navbar-timeline {
+    height: 20%;
+  }
+  .navbar-timeline .shape-circule {
+    width: 70px;
+    height: 70px;
+    margin-right: 13px;
+  }
+
+  .navbar-timeline a img {
+    right: 29px;
+    width: 140px;
+  }
+
+  .name-timeline {
+    font-size: 18px;
+  }
+  .navbar-timeline .close {
+    left: 58%;
+    padding-top: 2%;
+  }
+
+  .box {
+    width: 300px;
+    padding-top: 97px;
+  }
+
+  .container-1 input#search {
+    width: 300px;
+  }
+  .likes-section {
+    left: 492px;
+    top: 8px;
+  }
+
+  .likes-section p {
+    font-size: 18px;
+  }
+
+  .n-like-btn {
+    width: 21px;
+    bottom: 26px;
+  }
+
+  .n-like-btn img {
+    width: 30px;
+  }
+
+  /* MODAL NEW POST */
+  .modal-content-n-post {
+    width: 30%;
+  }
+
+  .container-newpost {
+    width: 28vw;
+    margin-top: 2px;
+  }
+
+  .modal-content-delete {
+    width: 35%;
+  }
+
+  .contact-modal {
+    width: 27vw;
   }
 }
