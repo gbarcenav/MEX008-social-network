@@ -3,7 +3,6 @@ let Profile = {
     let view = /*html*/ `
     <section id="" class="profile">
         
-    <header>
       <div class="profile-container" id="">
         <div class="img-text-profile">
           <div class="shape-circule">
@@ -21,7 +20,6 @@ let Profile = {
           </div>
         </div>
       </div>
-    </header>
 
     <button class="btn-share" id="btn-share">Compártenos tu recomendación/queja</button>
 

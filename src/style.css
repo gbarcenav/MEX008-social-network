@@ -197,6 +197,7 @@ body {
 .profile {
   background-color: #bdd5d7;
   height: 100vh;
+  overflow: scroll;
 }
 /* NAVBAR */
 .navbar-profile {
@@ -300,6 +301,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  margin-bottom: 10px;
   border-radius: 20px;
   overflow: hidden;
   padding-top: 13px;
@@ -719,5 +721,94 @@ body {
     width: 265px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* NAVBAR */
+  .navbar-profile {
+    height: 22%;
+  }
+
+  .navbar-profile a img {
+    width: 70px;
+  }
+  .close {
+    padding-top: 1%;
+    left: 76%;
+  }
+
+  /* PROFILE PERSON */
+  .profile-container {
+    height: 45vh;
+  }
+  .img-text-profile {
+    width: 35%;
+    margin-top: 9%;
+  }
+  .shape-circule {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-container img {
+    width: 261px;
+    right: 49px;
+  }
+  .text-profile {
+    padding-top: 30px;
+  }
+  .text-profile h1 {
+    font-size: 26px;
+  }
+  .text-profile h2 {
+    font-size: 20px;
+  }
+  .text-profile h3 {
+    font-size: 19px;
+  }
+
+  /* BOTTOM NEW POST */
+  .btn-share {
+    width: 500px;
+    height: 65px;
+    font-size: 22px;
+    margin-top: 27px;
+  }
+  .container-post {
+    width: 56vw;
+    height: 30vh;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .delete-btn {
+    left: 512px;
+    top: 7px;
+  }
+
+  .delete-btn img {
+    width: 28px;
+  }
+  .container-post h2 {
+    font-size: 25px;
+  }
+  .recommendation {
+    font-size: 20px;
+  }
+  .type-company {
+    font-size: 20px;
+  }
+  .company {
+    font-size: 22px;
+  }
+  .commentary {
+    font-size: 20px;
+  }
+  .contact {
+    margin-top: 27px;
+    font-size: 20px;
+  }
+  .stars {
+    left: 329px;
+    top: 28px;
   }
 }
