@@ -154,6 +154,7 @@ let Profile = {
     <input type="radio" style="width:20px;height:20px" name="option" value="complain" id="input-complain"><p style="color:#F18E8C">Queja</p>
     <input
       type="text"
+      name="service"
       id="type-service"
       placeholder="Tipo de servicio"
       class="form-input"
@@ -163,6 +164,7 @@ let Profile = {
 
     <input
       type="text"
+      name="nameCompany"
       id="name-company"
       placeholder="Nombre de la empresa o persona"
       class="form-input"
@@ -171,7 +173,7 @@ let Profile = {
     />
     <textarea
     placeholder="Agrega un comentario"
-      name="textarea"
+      name="comment"
       rows="3"
       cols="33"
       id="new-comment"
@@ -182,6 +184,7 @@ let Profile = {
 
     <input
       type="text"
+      name="adress"
       id="adress"
       placeholder="Dirección"
       class="form-input"
@@ -199,7 +202,7 @@ let Profile = {
     
     <input
       type="tel"
-      name="mobile telephone"
+      name="mobileTelephone"
       pattern="[0-9]{10}"
       id="mobile"
       placeholder="Móvil/WhatsApp"
@@ -208,6 +211,7 @@ let Profile = {
 
     <input
       type="number"
+      name="stars"
       maxlength="1"
       min="1"
       max="5"
@@ -217,11 +221,39 @@ let Profile = {
       width: 145px;"
       required
     />
-    <button class="btn-blue" id="add-n-post">Agregar</button>
+    <button type="button" class="btn-blue" id="add-n-post">Agregar</button>
 </form>
 `;
+
     document.getElementById("btn-share").addEventListener("click", () => {
       printNewPost(formNewPost);
+      //YAEL
+      const btnPost = document.getElementById("add-n-post");
+
+      btnPost.addEventListener("click", () => {
+        console.log("Hola Mundo");
+        // const paintComment = document.getElementById("container-post");
+        const formAddPost = document.getElementById("form-newpost");
+        const typeA = formAddPost.option.value;
+        const typeServiceA = formAddPost.service.value;
+        const nameCom = formAddPost.nameCompany.value;
+        const commentA = formAddPost.comment.value;
+        const adressA = formAddPost.adress.value;
+        const telephoneA = formAddPost.telephone.value;
+        const mobileA = formAddPost.mobileTelephone.value;
+        const star = formAddPost.stars.value;
+        window.postUser(
+          typeA,
+          typeServiceA,
+          nameCom,
+          commentA,
+          adressA,
+          telephoneA,
+          mobileA,
+          star
+        );
+        // window.showDate();
+      });
     });
 
     // Imprimir modal contacto
