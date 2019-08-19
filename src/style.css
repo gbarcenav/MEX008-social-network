@@ -709,4 +709,15 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* SIGN IN */
+  .signin-elements {
+    padding-top: 10%;
+  }
+
+  .form-signin-st {
+    width: 265px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
